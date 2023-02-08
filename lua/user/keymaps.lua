@@ -25,7 +25,7 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "ss", ":ToggleTermSendCurrentLine<CR>", opts)
+keymap("n", "ss", "<S-v>:ToggleTermSendVisualLines<CR>", opts)
 keymap("n", "sj", ":TermExec cmd=''<CR>", opts)
 keymap("v", "ss", ":ToggleTermSendVisualLines<CR>", opts)
 keymap("v", "sj", ":ToggleTermSendVisualSelection<CR>", opts)
