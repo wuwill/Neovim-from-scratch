@@ -1,21 +1,31 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.lsp"
-require "user.telescope"
-require "user.gitsigns"
-require "user.treesitter"
-require "user.autopairs"
-require "user.comment"
-require "user.nvim-tree"
-require "user.bufferline"
-require "user.lualine"
-require "user.toggleterm"
-require "user.project"
-require "user.impatient"
-require "user.indentline"
-require "user.alpha"
-require "user.whichkey"
-require "user.autocommands"
+vim.cmd.source("~/.config/nvim/wyang.short.vimrc")
+
+require("user.options")
+require("user.keymaps")
+require("user.plugins")
+-- require "user.hop"
+require("user.colorscheme")
+require("user.cmp")
+require("user.lsp")
+require("user.telescope")
+require("user.gitsigns")
+require("user.treesitter")
+require("user.autopairs")
+require("user.comment")
+require("user.nvim-tree")
+require("user.bufferline")
+require("user.lualine")
+require("user.toggleterm")
+require("user.project")
+require("user.impatient")
+require("user.indentline")
+require("user.alpha")
+require("user.whichkey")
+require("user.autocommands")
+require("mini.ai").setup({ })
+require("mini.indentscope").setup()
+require("mini.jump").setup()
+require("mini.surround").setup()
+-- require("mini.jump2d").setup()
+-- require("mini.cursorword").setup()
+-- require("mini.align").setup()
