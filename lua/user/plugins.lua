@@ -75,6 +75,16 @@ return packer.startup(function(use)
   use 'ThePrimeagen/harpoon'
   use 'chentoast/marks.nvim'
 
+  -- colors
+  use 'rmehri01/onenord.nvim'
+  use {
+    "mcchrish/zenbones.nvim",
+    requires = "rktjmp/lush.nvim"
+  }
+  use "savq/melange-nvim"
+  use {'nyoom-engineering/oxocarbon.nvim'}
+  use { "ellisonleao/gruvbox.nvim" }
+
 	-- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
   use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }

@@ -9,7 +9,7 @@
 " nnoremap ; :
 " nnoremap q; q:
 " nnoremap @; @:
-" nnoremap '; ":
+" nnoremap '; ':
 " nnoremap sl ;
 " nnoremap sh ,
 " nnoremap ' "
@@ -21,14 +21,6 @@
  " inoremap <C-J> <Esc>
 " inoremap jk <c-n>
 " inoremap jl <ESC>la
-" \fp
-" /Users/wyang/Files/GDrive_files/gd_wy/local/neovim_customj
-" wyang.short.vimrc
-" /Users/wyang/Files/GDrive_files/gd_wy/local/neovim_custom
-" wyang.short.vimrc
-" \fp
-" /Users/wyang/Files/GDrive_files/gd_wy/local/neovim_custom
-"
 inoremap \fd <C-R>=expand("%:p")<CR>
 inoremap \fn <C-R>=expand("%:t")<CR>
 inoremap \ff <C-R>=expand("%:p:h")<CR>
@@ -109,9 +101,9 @@ nmap <F6> /}<CR>zf%<ESC>:nohlsearch<CR>
 
 " Easier to type, and I never use the default behavior.
 noremap gh ^
-noremap gl $
+" noremap gl $
 vnoremap gh ^
-vnoremap gl g_
+" vnoremap gl g_
 " vnoremap gs "ay:new<CR>"ap:w! ~/GDrive/local/shared_cp.txt<CR>:bde<CR>
 " nnoremap gs :. w! ~/GDrive/local/shared_cp.txt<CR>
 " command! SS read ~/GDrive/local/shared_cp.txt
@@ -260,7 +252,9 @@ endif
 " hi Normal guibg=NONE ctermbg=NONE
 " highlight Comment cterm=italic gui=italic
 " set rnu
-" set termguicolors
+set termguicolors
+colorscheme onenord
+set background=light
 " highlight Comment cterm=italic gui=italic
 " if has("statusline") && !&cp
 "   set laststatus=2  " always show the status bar
@@ -277,9 +271,9 @@ endif
 " set lazyredraw                  " don't update the display while executing macros
 " set laststatus=2                " tell VIM to always put a status line in, even
 "                                 "    if there is only one window
-" set cmdheight=1                 " use a status bar that is 2 rows high
-" set showcmd                     " show (partial) command in the last line of the screen
-" set nomodeline                  " disable mode lines (security measure)
+set cmdheight=1                 " use a status bar that is 2 rows high
+set showcmd                     " show (partial) command in the last line of the screen
+set nomodeline                  " disable mode lines (security measure)
 " set cursorline                  " underline the current line, for quick orientation
 " set ttyfast
 "
