@@ -12,7 +12,7 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 local HEIGHT_RATIO = 0.7 -- You can change this
-local WIDTH_RATIO = 0.4  -- You can change this too
+local WIDTH_RATIO = 0.6  -- You can change this too
 
 nvim_tree.setup({
   disable_netrw = true,
