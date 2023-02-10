@@ -1,8 +1,6 @@
-" function FoldConfig()
-    " set foldmethod=expr
-    " set foldexpr=nvim_treesitter#foldexpr()
-" endfunction
-" autocmd BufAdd,BufEnter,BufNew,BufNewFile,BufWinEnter * :call FoldConfig()
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " =============== Shortcut mappings ===============
 " {{{
