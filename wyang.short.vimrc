@@ -255,7 +255,6 @@ endif
 " highlight Comment cterm=italic gui=italic
 " set rnu
 set termguicolors
-colorscheme onenord
 " set background=light
 let iterm_profile = $ITERM_PROFILE
 " if iterm_profile == "Dark"
@@ -359,7 +358,17 @@ set nomodeline                  " disable mode lines (security measure)
 " call SetAppearance()
 " call timer_start(2000, "SetAppearance", {"repeat": -1})
 
-if strftime("%H") > 9 && strftime("%H") < 16
+if hostname() == "wym1.local.dhcp.wustl.edu"
+    let lightmodestart=8 
+    let lightmodeend=17
+else
+    let lightmodestart=10 
+    let lightmodeend=19
+endif
+let hour=strftime("%H")
+
+colorscheme neobones
+if hour >= lightmodestart && hour < lightmodeend
   set background=light
 else
   set background=dark
