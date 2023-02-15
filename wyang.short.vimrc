@@ -256,7 +256,14 @@ endif
 " set rnu
 set termguicolors
 colorscheme onenord
-set background=light
+" set background=light
+let iterm_profile = $ITERM_PROFILE
+" if iterm_profile == "Dark"
+"     set background=dark
+" else
+"     set background=light
+" endif
+
 " highlight Comment cterm=italic gui=italic
 " if has("statusline") && !&cp
 "   set laststatus=2  " always show the status bar
@@ -327,3 +334,33 @@ set nomodeline                  " disable mode lines (security measure)
 "     \ "addcr": 1,
 "     \ "filter": 0,
 "     \ }
+
+" Automatically switch light/dark background + theme
+" function! SetAppearance(...)
+"   try
+"     let s:mode = systemlist("defaults read -g AppleInterfaceStyle")[0]
+"     let s:new_bg = ""
+"     let s:new_theme = ""
+"     if s:mode ==? "Dark"
+"       let s:new_bg = "dark"
+"       " let s:new_theme = "base16-unikitty-dark"
+"     else
+"       let s:new_bg = "light"
+"       " let s:new_theme = "base16-unikitty-light"
+"     endif
+"     if &background !=? s:new_bg
+"       let &background = s:new_bg
+"       " execute 'colorscheme '.s:new_theme
+"     endif
+"   catch
+"     " Ignore errors
+"   endtry
+" endfunction
+" call SetAppearance()
+" call timer_start(2000, "SetAppearance", {"repeat": -1})
+
+if strftime("%H") > 9 && strftime("%H") < 16
+  set background=light
+else
+  set background=dark
+endif
