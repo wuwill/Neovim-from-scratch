@@ -367,9 +367,49 @@ else
 endif
 let hour=strftime("%H")
 
-colorscheme neobones
 if hour >= lightmodestart && hour < lightmodeend
   set background=light
+  colorscheme neobones
+  highlight Cursor guifg=white guibg=black
+  highlight iCursor guifg=white guibg=red
+  set guicursor=n-v-c:block-Cursor
+  set guicursor+=i:ver100-iCursor
 else
   set background=dark
+  colorscheme slate
+  highlight Cursor guifg=white guibg=darkorange
+  highlight iCursor guifg=white guibg=red
+  set guicursor=n-v-c:block-Cursor
+  set guicursor+=i:ver100-iCursor
 endif
+" set guicursor+=a:-blinkwait175-blinkoff150-blinkon200
+
+function! SetAppearance(...)
+    try
+        if hostname() ==? "wym1.local.dhcp.wustl.edu"
+            let s:lightmodestart=8 
+            let s:lightmodeend=17
+        else
+            let s:lightmodestart=10 
+            let s:lightmodeend=19
+        endif
+
+        let s:hour=strftime("%H")
+
+        let s:new_bg = ""
+        if s:hour >= s:lightmodestart && s:hour < s:lightmodeend
+            set s:new_bg="light"
+        else
+            set s:new_bg="dark"
+        endif
+
+        if &background !=? s:new_bg
+            let &background = s:new_bg
+            " execute 'colorscheme '.s:new_theme
+        endif
+    catch
+        " Ignore errors
+    endtry
+endfunction
+" call SetAppearance()
+" call timer_start(10000, "SetAppearance", {"repeat": -1})
