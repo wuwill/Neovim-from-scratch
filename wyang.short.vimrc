@@ -369,19 +369,20 @@ let hour=strftime("%H")
 
 if hour >= lightmodestart && hour < lightmodeend
   set background=light
-  colorscheme neobones
+  " colorscheme neobones
   highlight Cursor guifg=white guibg=black
   highlight iCursor guifg=white guibg=red
   set guicursor=n-v-c:block-Cursor
   set guicursor+=i:ver100-iCursor
 else
   set background=dark
-  colorscheme slate
+  " colorscheme slate
   highlight Cursor guifg=white guibg=darkorange
   highlight iCursor guifg=white guibg=red
   set guicursor=n-v-c:block-Cursor
   set guicursor+=i:ver100-iCursor
 endif
+colorscheme minicyan
 " set guicursor+=a:-blinkwait175-blinkoff150-blinkon200
 
 function! SetAppearance(...)
